@@ -8,6 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   
   <style>
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
 html {
   scroll-behavior: smooth;
 }
@@ -58,7 +62,7 @@ a {
 
 /* Hero Section */
 .hero {
-  background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') no-repeat center center/cover;
+  background: url('Images/main.png') no-repeat center center/cover;
   height: 90vh;
   display: flex;
   justify-content: center;
@@ -358,27 +362,27 @@ footer {
   <h2>Our Projects</h2>
   <div class="projects-grid">
     <div class="project-card" onclick="openModal('modal1')">
-      <img src="Images/p1.png" alt="Project 1">
+      <img src="Images/rj1.jpg" alt="Project 1">
       <div class="content">
-        <p>SITC of HVAC work</p>
+        <p>'Rajyash One' A highrise commercial building</p>
       </div>
-      <div class="title">Rajyash Projects LLP, Gift City</div>
+      <div class="title">Rajyash Projects LLP, Gift City, Gandhinagar</div>
     </div>
 
     <div class="project-card" onclick="openModal('modal2')">
       <img src="Images/sobha1.png" alt="Project 2">
       <div class="content">
-        <p>SITC of HVAC and Electrical work.</p>
+        <p>'Sobha Dream Heights' A high rise residential building - two towers x 33 floors at Gift City</p>
       </div>
-      <div class="title">Sobha Ltd, Bangalore</div>
+      <div class="title">Sobha Ltd, Gift City, Gandhinagar</div>
     </div>
 
     <div class="project-card" onclick="openModal('modal3')">
       <img src="Images/sangath.png" alt="Project 3">
       <div class="content">
-        <p>SITC of HVAC and Firefighting work.</p>
+        <p>'Sangath Smart Life' A high rise residential building - two towers x 24 floors at Gift City</p>
       </div>
-      <div class="title">Sangath 81 Infra Pvt.Ltd, Ahmedabad</div>
+      <div class="title">Sangath 81 Infra Pvt.Ltd, Gift City, Gandhinagar</div>
     </div>
   </div>
 </section>
@@ -391,8 +395,8 @@ footer {
 <div id="modal1" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal1')">&times;</span>
-    <img src="Images/p1.png" alt="Project 1">
-    <p>Supply, Installation, Testing and Commissioning of HVAC work for Rajyash Projects LLP, Gift City.</p>
+    <img src="Images/rj1.jpg" alt="Project 1">
+    <p>We successfully carried out the Supply, Installation, Testing, and Commissioning (SITC) of advanced HVAC systems for the project. The scope included design coordination, equipment installation, ducting, piping, and system integration to ensure optimal indoor air quality and energy efficiency. Our team delivered the project within the committed timeline, maintaining the highest standards of workmanship and safety."</p>
   </div>
 </div>
 
@@ -400,7 +404,7 @@ footer {
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal2')">&times;</span>
     <img src="Images/sobha1.png" alt="Project 2">
-    <p>Complete SITC of HVAC and Electrical Systems for Sobha Ltd, Bangalore.</p>
+    <p>We successfully completed the Supply, Installation, Testing, and Commissioning (SITC) of HVAC and Electrical systems for the project. The scope covered end-to-end HVAC solutions, electrical wiring, panel installations, lighting systems, and energy management to ensure seamless project execution with top-quality standards and safety compliance."</p>
   </div>
 </div>
 
@@ -408,21 +412,23 @@ footer {
   <div class="modal-content">
     <span class="close" onclick="closeModal('modal3')">&times;</span>
     <img src="Images/sangath.png" alt="Project 3">
-    <p>SITC of HVAC and Fire Fighting systems at Sangath 81 Infra Pvt. Ltd, Ahmedabad.</p>
+    <p>We executed the Installation, Testing, and Commissioning (ITC) of HVAC and Firefighting systems for the project. Our scope included the installation of ventilation and air conditioning systems along with comprehensive fire safety solutions, ensuring efficient performance and full regulatory compliance.</p>
   </div>
 </div>
 
-<!-- New Auto Modal -->
-<div id="autoModal" class="modal">
-  <div class="modal-content" style="display: flex; align-items: center; gap: 20px;">
+<div id="autoModal" class="modal" style="background: transparent;">
+  <div class="modal-content" style="display: flex; align-items: center; gap: 20px; background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); animation: popIn 0.6s ease;">
     <div style="flex: 1; text-align: left;">
-      <h2>Welcome to Rudra Engicorp</h2>
-      <p>Your trusted partner for MEP solutions. Let's build excellence together!</p>
+      <h2 style="color: #d4af37;">🎀 Welcome to Rudra Engicorp</h2>
+      <p style="font-size: 18px; font-weight: bold; color: #333;">
+        We are thrilled to announce that we won the <span style="color: #d4af37;">Best MEP Award 2024</span>! 🎉<br>
+        Thank you for being part of our journey. Let's continue building excellence together!
+      </p>
     </div>
     <div style="flex: 1;">
       <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Welcome Image" style="width:100%; height:auto; border-radius:10px;">
     </div>
-    <span class="close" onclick="document.getElementById('autoModal').style.display='none'">&times;</span>
+    <span class="close" onclick="document.getElementById('autoModal').style.display='none'" style="font-size: 28px;">&times;</span>
   </div>
 </div>
 
@@ -432,7 +438,7 @@ footer {
   <div class="contact-container">
     <div class="contact-details">
       <h3>Get In Touch</h3>
-      <p><strong>Phone:</strong> +91-9662064701</p>
+      <p><strong>Phone:</strong> +91-97263 89566</p>
       <p><strong>Email:</strong> rudra.engicorp@gmail.com</p>
       <p><strong>Address:</strong> FF, B-116, Sakar-7 near Nehru Bridge, Ashram Road, Ellis Bridge, Ahmedabad, Gujarat, India</p>
     </div>
