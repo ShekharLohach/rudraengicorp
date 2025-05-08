@@ -4,143 +4,161 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | Rudra Engicorp</title>
-
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-
+  <!-- Poppins + Playfair Display for a premium feel -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html, body {
+    /* Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
       font-family: 'Poppins', sans-serif;
-      height: 100%;
-      background: #f9f9f9;
+      background: #f2f2f2;
       color: #333;
-      display: flex;
-      flex-direction: column;
-    }
-
-    nav {
-      background-color: #111;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav .logo {
-      color: white;
-      font-size: 1.5rem;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: #00bcd4;
-    }
-
-    .content {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 60px 20px;
-    }
-
-    .about-section {
-      max-width: 900px;
-      background: white;
-      padding: 40px 30px;
-      border-radius: 10px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s ease-out forwards;
-    }
-
-    .about-section h2 {
-      font-size: 2.2rem;
-      color: #111;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .about-section p {
-      font-size: 1.05rem;
       line-height: 1.6;
-      margin-bottom: 20px;
-      text-align: justify;
     }
+    a { text-decoration: none; color: inherit; }
 
-    footer {
-      background-color: #111;
-      color: white;
+    /* Navbar */
+    nav {
+      background: #1a1a1a;
+      padding: 1rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    nav .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; color: #e0c097; letter-spacing: 1px;
+    }
+    nav ul {
+      list-style: none; display: flex; gap: 1.5rem;
+    }
+    nav ul a {
+      color: #fafafa; font-weight: 600;
+      transition: color .3s;
+    }
+    nav ul a:hover { color: #e0c097; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(rgba(26,26,26,0.6),rgba(26,26,26,0.6)), url('Images/main.png') center/cover no-repeat;
+      padding: 5rem 2rem;
       text-align: center;
-      padding: 15px 10px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
+      color: #fafafa;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem; margin-bottom: .5rem;
+      letter-spacing: .5px;
+    }
+    .hero p {
+      font-size: 1.3rem; max-width: 700px; margin: 0 auto;
+      font-style: italic;
     }
 
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    /* Container */
+    .container {
+      max-width: 900px; margin: 3rem auto; padding: 0 1rem;
+      display: grid; gap: 2.5rem;
     }
 
-    @media (max-width: 600px) {
-      .about-section {
-        padding: 30px 20px;
-      }
+    /* Section Titles */
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; color: #1a1a1a;
+      text-align: center; margin-bottom: 1rem;
+      position: relative; display: inline-block;
+    }
+    .section-title::after {
+      content: ''; display: block;
+      width: 60px; height: 3px; background: #e0c097;
+      margin: 0.5rem auto 0;
+    }
+
+    /* Cards */
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    }
+    .card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; color: #1a1a1a;
+      margin-bottom: .75rem;
+    }
+    .card p {
+      font-size: 1rem; color: #555; text-align: justify;
+    }
+
+    /* Specific Intro */
+    .intro {
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><circle cx="5" cy="5" r="2" fill="%23e0c097"/></svg>') center/50px no-repeat #fff;
+    }
+    .intro p { margin-left: 60px; }
+
+    /* Footer */
+    footer {
+      background: #1a1a1a; color: #ccc;
+      text-align: center; padding: 1rem;
+      font-size: .9rem; margin-top: 3rem;
+    }
+
+    /* Responsive */
+    @media (max-width:600px) {
+      .hero h1 { font-size: 2.5rem; }
+      .hero p  { font-size: 1.1rem; }
+      .container { margin: 2rem auto; }
     }
   </style>
 </head>
-
 <body>
 
-<!-- Navbar -->
-<nav>
-  <a href="index.html" class="logo">Rudra Engicorp</a>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
-  </ul>
-</nav>
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html" class="logo">Rudra Engicorp</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-<!-- Main Content -->
-<div class="content">
-  <section class="about-section">
-    <h2>About Rudra Engicorp</h2>
-    <p>At Rudra Engicorp, we specialize in delivering comprehensive MEP (Mechanical, Electrical, and Plumbing) engineering solutions. Our services span a wide spectrum, including Electrical Systems, HVAC, Fire Protection Systems (FPS), Public Health Environment (PHE), Low Voltage (LV) Systems, rooftop solar installations, Operations & Maintenance (O&M), and other specialized engineering services.
-Our mission is to provide integrated, reliable, and need-based engineering solutions tailored to our clients’ specific requirements. We are committed to delivering value through innovation, technical excellence, and customer-centric practices.
-Our vision is to be recognized as one of the most trusted MEP service providers in the industry. We strive for continuous improvement in safety, quality, service delivery, and environmental responsibility to ensure long-term success and sustainability for our clients and stakeholders.</p>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>About Rudra Engicorp</h1>
+    <p>Integrating elegance with engineering—your turnkey MEP partner since day one.</p>
   </section>
-</div>
 
-<!-- Footer -->
-<footer>
-  &copy; 2025 Rudra Engicorp. All rights reserved.
-</footer>
+  <!-- Content -->
+  <div class="container">
+
+    <div class="card intro">
+      <h2 class="section-title">Who We Are</h2>
+      <p>The firm is specialized in complete MEP engineering solutions, offering a large spectrum of services like Electrical, HVAC, Fire Protection Systems, Plumbing &amp; PHE, L-Systems, Rooftop Solar, O&amp;M and other bespoke engineering services tailored to your vision.</p>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title">Our Mission</h2>
+      <p>To be the holistic, out-of-the-box engineering solution provider—delivering reliable, need-based services with unwavering quality, so our clients can build with confidence and distinction.</p>
+    </div>
+
+    <div class="card">
+      <h2 class="section-title">Our Vision</h2>
+      <p>To ascend as the most trusted name in MEP solutions—through continuous refinement of safety protocols, impeccable service delivery, and pioneering environmental stewardship that sets new industry benchmarks.</p>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Rudra Engicorp. All rights reserved.
+  </footer>
 
 </body>
 </html>

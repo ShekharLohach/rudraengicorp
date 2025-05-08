@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,556 +5,478 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rudra Engicorp | MEP Services</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  
   <style>
     @keyframes popIn {
-      0% { transform: scale(0.7); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
+      0%   { transform: scale(0.7); opacity: 0; }
+      100% { transform: scale(1);   opacity: 1; }
     }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
       background-color: #f4f4f4;
     }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    
+    a { text-decoration: none; color: inherit; }
+
     /* Navbar */
     .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #111;
-      padding: 20px 40px;
-      color: white;
-      flex-wrap: wrap;
+      display: flex; justify-content: space-between; align-items: center;
+      background-color: #111; padding: 20px 40px; color: white; flex-wrap: wrap;
     }
-/* MEP Gallery Section */
-    .mep-gallery { padding: 80px 20px; background-color: #fff; text-align: center; }
-    .mep-gallery h2 { font-size: 2.8rem; margin-bottom: 40px; }
-    .image-scroll-container { overflow: hidden; white-space: nowrap; }
-    .image-scroll-container .image-card { display: inline-block; margin: 0 20px; }
-    .image-scroll-container .image-card img { width: 400px; height: 400px; object-fit: cover; border-radius: 8px; transition: transform 0.3s ease; }
-    .mep-gallery h2 { font-size: 3.5rem; margin-bottom: 30px; }
-    .image-scroll-container { overflow: hidden; white-space: nowrap; }
-    .image-scroll-container .image-card { display: inline-block; margin: 0 15px; }
-    .image-scroll-container .image-card img { width: 350px; height: 300px; object-fit: cover; border-radius: 8px; transition: transform 0.3s ease; }
-    .image-scroll-container .image-card img:hover { transform: scale(1.05); }
-    /* Animation only for #mepScroll */
-    #mepScroll { animation: scroll-gallery 20s linear infinite; }
-    @keyframes scroll-gallery { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo img { width: 40px; height: 40px; object-fit: contain; }
+    .logo span { font-size: 1.5rem; font-weight: bold; }
+    .nav-links { display: flex; gap: 20px; list-style: none; }
+    .nav-links li a:hover { color: #00bfff; }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .logo img {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
-    }
-    .logo span {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-    }
-    .nav-links li a:hover {
-      color: #00bfff;
-    }
-    
     /* Hero Section */
     .hero {
       background: url('Images/main.png') no-repeat center center/cover;
-      height: 90vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      padding: 20px;
+      height: 90vh; display: flex; justify-content: center; align-items: center;
+      text-align: center; color: white; padding: 20px;
     }
     .hero-content {
-      background-color: rgba(0,0,0,0.6);
-      padding: 40px;
-      border-radius: 10px;
+      background-color: rgba(0,0,0,0.6); padding: 40px; border-radius: 10px;
     }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-    .hero p {
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-    }
+    .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+    .hero p { font-size: 1.3rem; margin-bottom: 20px; }
     .cta-btn {
-      background-color: #00bfff;
-      padding: 10px 20px;
-      border-radius: 5px;
-      color: white;
-      font-weight: bold;
-      transition: 0.3s;
-      display: inline-block;
+      background-color: #00bfff; padding: 10px 20px; border-radius: 5px;
+      color: white; font-weight: bold; transition: 0.3s; display: inline-block;
     }
-    .cta-btn:hover {
-      background-color: #00aaff;
-    }
-    
+    .cta-btn:hover { background-color: #00aaff; }
+
     /* Services Section */
     .services {
-      padding: 60px 20px;
-      background-color: #fff;
-      text-align: center;
+      padding: 60px 20px; background-color: #fff; text-align: center;
     }
-    .services h2 {
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-    }
+    .services h2 { font-size: 2.5rem; margin-bottom: 40px; }
     .services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 items in a row initially */
-  gap: 30px;
-  padding: 0 20px;
-}
-
-/* Tablet screen */
-@media (max-width: 900px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 items in a row */
-  }
-}
-
-/* Mobile screen */
-@media (max-width: 600px) {
-  .services-grid {
-    grid-template-columns: 1fr; /* 1 item in a row */
-  }
-}
-
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 30px; padding: 0 20px;
+    }
+    @media (max-width:900px) {
+      .services-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width:600px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
     .service-card {
-      background-color: #f9f9f9;
-      padding: 20px 15px;
-      border-radius: 10px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      background-color: #f9f9f9; padding: 20px 15px; border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
       transition: transform 0.3s, box-shadow 0.3s;
-      height: 200px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-  opacity: 0;
-  transform: translateY(50px);
-  animation: fadeUp 0.8s forwards;
+      height: 200px; display: flex; flex-direction: column; justify-content: center;
+      opacity: 0; transform: translateY(50px); animation: fadeUp 0.8s forwards;
     }
     .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+      transform: translateY(-10px); box-shadow: 0 12px 25px rgba(0,0,0,0.3);
     }
-    .service-card h3 {
-      font-size: 1.5rem;
-      margin: 10px 0;
-    }
-    .service-card p {
-      font-size: 1rem;
-      color: #555;
-    }
-.service-card:nth-child(1) { animation-delay: 0.1s; }
-.service-card:nth-child(2) { animation-delay: 0.2s; }
-.service-card:nth-child(3) { animation-delay: 0.3s; }
-.service-card:nth-child(4) { animation-delay: 0.4s; }
-.service-card:nth-child(5) { animation-delay: 0.5s; }
-.service-card:nth-child(6) { animation-delay: 0.6s; }
+    .service-card h3 { font-size: 1.5rem; margin: 10px 0; }
+    .service-card p  { font-size: 1rem; color: #555; }
+    .service-card:nth-child(1) { animation-delay:0.1s; }
+    .service-card:nth-child(2) { animation-delay:0.2s; }
+    .service-card:nth-child(3) { animation-delay:0.3s; }
+    .service-card:nth-child(4) { animation-delay:0.4s; }
+    .service-card:nth-child(5) { animation-delay:0.5s; }
+    .service-card:nth-child(6) { animation-delay:0.6s; }
+    @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
 
-/* 👇 Define the fadeUp animation */
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-    
+    /* MEP Gallery Section */
+    .mep-gallery {
+      padding: 80px 20px; background-color: #fff; text-align: center;
+    }
+    .mep-gallery h2 {
+      font-size: 3.5rem; margin-bottom: 30px;
+    }
+    .image-scroll-container {
+      overflow: hidden; white-space: nowrap;
+    }
+    .image-card {
+      display: inline-block; margin: 0 10px;
+    }
+    .image-card img {
+      width: 200px; height: auto; object-fit: cover;
+      border-radius: 8px; transition: transform 0.3s ease;
+    }
+    .image-card img:hover {
+      transform: scale(1.05);
+    }
+    #mepScroll {
+      animation: scroll-gallery 20s linear infinite;
+    }
+    @keyframes scroll-gallery {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
     /* Projects Section */
     .projects {
-      padding: 60px 20px;
-      background-color: #f4f4f4;
-      text-align: center;
+      padding: 60px 20px; background-color: #f4f4f4; text-align: center;
     }
-    .projects h2 {
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-    }
+    .projects h2 { font-size: 2.5rem; margin-bottom: 40px; }
     .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      padding: 0 20px;
+      display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 30px; padding: 0 20px;
     }
     .project-card {
-      background-color: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      background-color: #fff; border-radius: 10px; overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
       transition: transform 0.3s, box-shadow 0.3s;
-      display: flex;
-      flex-direction: column;
-      height: 400px;
-      position: relative;
+      display: flex; flex-direction: column; height: 400px; position: relative;
       cursor: pointer;
     }
     .project-card img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
+      width:100%; height:250px; object-fit:cover;
     }
     .project-card .content {
-      padding: 15px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      padding:15px; flex-grow:1; display:flex;
+      flex-direction:column; justify-content:space-between;
     }
     .project-card p {
-      font-size: 0.95rem;
-      color: #444;
-      text-align: left;
-      margin-bottom: 40px;
+      font-size:0.95rem; color:#444; margin-bottom:40px;
     }
     .project-card .title {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: white;
-      text-align: center;
-      padding: 8px 0;
-      font-size: 1.2rem;
+      position:absolute; bottom:0; width:100%;
+      background:rgba(0,0,0,0.6); color:white; text-align:center;
+      padding:8px 0; font-size:1.2rem;
     }
     .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+      transform:translateY(-10px); box-shadow:0 12px 25px rgba(0,0,0,0.3);
     }
-    
+
+    /* Awards Section */
+    .awards { padding:60px 20px; background-color:#fff; text-align:center; }
+    .awards h2 { font-size:2.5rem; margin-bottom:40px; }
+    .award-container {
+      display:flex; justify-content:center; align-items:center;
+    }
+    .award-card {
+      background:#f9f9f9; padding:20px; border-radius:10px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.1);
+      max-width:400px; display:flex; gap:20px; align-items:center;
+      text-align:left;
+    }
+    .award-card img {
+      width:150px; height:auto; object-fit:contain; cursor:pointer;
+    }
+    .award-details h3 { margin:0 0 10px; font-size:1.3rem; }
+    .award-details p  { margin:0; color:#555; }
+
+    /* Lightbox modal tweaks */
+    #awardModal .modal-content {
+      background:transparent!important; box-shadow:none!important;
+      padding:0!important;
+    }
+    #awardModal .modal-content img {
+      max-width:80vw!important; max-height:80vh!important;
+      width:auto!important; height:auto!important;
+      margin:0 auto; border-radius:10px;
+    }
+
     /* Contact Section */
     .contact {
-      padding: 60px 20px;
-      background-color: #fff;
-      text-align: center;
+      padding:60px 20px; background-color:#fff; text-align:center;
     }
-    .contact h2 {
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-    }
+    .contact h2 { font-size:2.5rem; margin-bottom:40px; }
     .contact-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
+      display:flex; flex-wrap:wrap; justify-content:center; gap:40px;
     }
-    .contact-details, .contact-map {
-      flex: 1 1 400px;
-      max-width: 500px;
-      background-color: #f9f9f9;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s, box-shadow 0.3s;
+    .contact-details,
+    .contact-map {
+      flex:1 1 400px; max-width:500px; background:#f9f9f9;
+      padding:30px; border-radius:10px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.2);
+      transition:transform 0.3s, box-shadow 0.3s;
     }
-    .contact-details {
-      text-align: left;
-    }
-    .contact-details:hover, .contact-map:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    .contact-details:hover,
+    .contact-map:hover {
+      transform:translateY(-10px);
+      box-shadow:0 12px 25px rgba(0,0,0,0.3);
     }
     .contact-map iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 8px;
+      width:100%; height:300px; border:none; border-radius:8px;
     }
-    
+
     /* Footer */
     footer {
-      background-color: #111;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
+      background-color:#111; color:white; text-align:center;
+      padding:20px; font-size:0.9rem;
     }
-    
+
     /* Modal */
     .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.7);
+      display:none; position:fixed; z-index:1000;
+      left:0; top:0; width:100%; height:100%;
+      background-color:rgba(0,0,0,0.7); overflow:auto;
     }
     .modal-content {
-      background-color: #fff;
-      margin: 5% auto;
-      padding: 20px;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 700px;
-      position: relative;
-      text-align: center;
-      animation: fadeIn 0.5s;
+      background-color:#fff; margin:5% auto; padding:20px;
+      border-radius:10px; width:90%; max-width:700px;
+      text-align:center; position:relative;
+      animation:fadeIn 0.5s;
     }
     .modal-content img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-    .modal-content p {
-      margin-top: 20px;
-      font-size: 1.1rem;
-      color: #333;
+      width:100%; height:auto; object-fit:cover; border-radius:10px;
     }
     .close {
-      color: #aaa;
-      position: absolute;
-      top: 15px;
-      right: 25px;
-      font-size: 30px;
-      font-weight: bold;
-      cursor: pointer;
+      position:absolute; top:15px; right:25px;
+      color:#aaa; font-size:30px; font-weight:bold; cursor:pointer;
     }
     .close:hover,
-    .close:focus {
-      color: black;
-    }
-    
-    /* Animation */
+    .close:focus { color:black; }
     @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.8); }
-      to { opacity: 1; transform: scale(1); }
+      from { opacity:0; transform:scale(0.8); }
+      to   { opacity:1; transform:scale(1);   }
     }
-    
+
     /* Responsive */
-    @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .nav-links {
-        flex-direction: column;
-        width: 100%;
-      }
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
+    @media (max-width:768px) {
+      .navbar { flex-direction:column; align-items:flex-start; }
+      .nav-links { flex-direction:column; width:100%; }
+      .hero h1 { font-size:2.2rem; }
+      .hero p  { font-size:1rem; }
     }
-    @media (max-width: 480px) {
-      .hero {
-        height: 70vh;
-      }
-      .hero-content {
-        padding: 20px;
-      }
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-      .hero p {
-        font-size: 0.95rem;
-      }
-      .cta-btn {
-        padding: 8px 15px;
-        font-size: 0.9rem;
-      }
+    @media (max-width:480px) {
+      .hero { height:70vh; }
+      .hero-content { padding:20px; }
+      .hero h1 { font-size:1.8rem; }
+      .hero p  { font-size:0.95rem; }
+      .cta-btn { padding:8px 15px; font-size:0.9rem; }
     }
+/* Gallery wrapper hides overflow */
+.gallery-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Flex container twice as long (12 cards) */
+.gallery-content {
+  display: flex;
+  animation: scrollGallery 20s linear infinite;
+}
+
+/* Card sizing */
+.image-card {
+  flex: 0 0 auto;
+  margin: 0 10px;
+}
+.image-card img {
+  width: 180px;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+.image-card img:hover {
+  transform: scale(1.05);
+}
+
+/* Scroll exactly one batch (6 cards) = 50% of content width */
+@keyframes scrollGallery {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.image-card img {
+  width: 350px !important;  /* up from 200px */
+  height: auto !important;
+}
+
+/* 2. Scale up the award card and its image */
+.awards .award-card {
+  max-width: 700px !important;  /* up from 400px */
+  padding: 30px !important;
+}
+.awards .award-card img {
+  width: 400px !important;  /* up from 150px */
+  height: auto !important;
+}
   </style>
 </head>
-
 <body>
 
-<!-- Navbar -->
-<nav class="navbar">
-  <div class="logo">
-    <a href="index.html" style="display: flex; align-items: center; gap: 10px;">
-      <img src="Images/erena-logo.png" alt="Logo">
-      <span>Rudra Engicorp</span>
-    </a>
-  </div>
-  <ul class="nav-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="about.html">About</a></li>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html" style="display:flex;align-items:center;gap:10px;">
+        <img src="Images/erena-logo.png" alt="Logo">
+        <span>Rudra Engicorp</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <li><a href="#services">Services</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>MEP Solutions for Your Projects</h1>
-    <p>Trusted Experts in Mechanical, Electrical, and Plumbing Works</p>
-    <a href="#services" class="cta-btn">Explore Services</a>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>MEP Solutions for Your Projects</h1>
+      <p>Trusted Experts in Mechanical, Electrical, and Plumbing Works</p>
+      <a href="#services" class="cta-btn">Explore Services</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>HVAC Installations</h3>
+        <p>Complete HVAC solutions for commercial and residential projects.</p>
+      </div>
+      <div class="service-card">
+        <h3>Electrical Systems</h3>
+        <p>Safe, efficient electrical system designs and execution.</p>
+      </div>
+      <div class="service-card">
+        <h3>Plumbing Solutions</h3>
+        <p>Expert plumbing installation and maintenance services.</p>
+      </div>
+      <div class="service-card">
+        <h3>Fire Fighting Systems</h3>
+        <p>Fire protection systems ensuring maximum safety compliance.</p>
+      </div>
+      <div class="service-card">
+        <h3>Building Automation</h3>
+        <p>Smart building controls for lighting, HVAC, and security.</p>
+      </div>
+      <div class="service-card">
+        <h3>Maintenance Services</h3>
+        <p>Preventive and corrective maintenance for MEP systems.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- MEP Gallery Section -->
+<section class="mep-gallery">
+  <h2>Our MEP Work</h2>
+  <div class="gallery-wrapper">
+    <div class="gallery-content" id="mepScroll">
+      <!-- first batch -->
+      <div class="image-card"><img src="Images/p1.jpg" alt="MEP Work 1"></div>
+      <div class="image-card"><img src="Images/p2.jpg" alt="MEP Work 2"></div>
+      <div class="image-card"><img src="Images/p3.jpg" alt="MEP Work 3"></div>
+      <div class="image-card"><img src="Images/p4.jpg" alt="MEP Work 4"></div>
+      <div class="image-card"><img src="Images/p5.jpg" alt="MEP Work 5"></div>
+      <div class="image-card"><img src="Images/p6.jpg" alt="MEP Work 6"></div>
+      <!-- duplicated batch -->
+      <div class="image-card"><img src="Images/p1.jpg" alt="MEP Work 1"></div>
+      <div class="image-card"><img src="Images/p2.jpg" alt="MEP Work 2"></div>
+      <div class="image-card"><img src="Images/p3.jpg" alt="MEP Work 3"></div>
+      <div class="image-card"><img src="Images/p4.jpg" alt="MEP Work 4"></div>
+      <div class="image-card"><img src="Images/p5.jpg" alt="MEP Work 5"></div>
+      <div class="image-card"><img src="Images/p6.jpg" alt="MEP Work 6"></div>
+    </div>
   </div>
 </section>
 
-<!-- Services Section -->
-<section id="services" class="services">
-  <h2>Our Services</h2>
-  <div class="services-grid">
-    <div class="service-card">
-      <h3>HVAC Installations</h3>
-      <p>Complete HVAC solutions for commercial and residential projects.</p>
-    </div>
-    <div class="service-card">
-      <h3>Electrical Systems</h3>
-      <p>Safe, efficient electrical system designs and execution.</p>
-    </div>
-    <div class="service-card">
-      <h3>Plumbing Solutions</h3>
-      <p>Expert plumbing installation and maintenance services.</p>
-    </div>
-    <div class="service-card">
-      <h3>Fire Fighting Systems</h3>
-      <p>Fire protection systems ensuring maximum safety compliance.</p>
-    </div>
-    <div class="service-card">
-      <h3>Building Automation</h3>
-      <p>Smart building controls for lighting, HVAC, and security.</p>
-    </div>
-    <div class="service-card">
-      <h3>Maintenance Services</h3>
-      <p>Preventive and corrective maintenance for MEP systems.</p>
-    </div>
-  </div>
-</section>
 
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <h2>Our Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card" onclick="openModal('modal1')">
+        <img src="Images/rj1.jpg" alt="Project 1">
+        <div class="content"><p>'Rajyash One' A highrise commercial building</p></div>
+        <div class="title">Rajyash Projects LLP, Gift City, Gandhinagar</div>
+      </div>
+      <div class="project-card" onclick="openModal('modal2')">
+        <img src="Images/sobha1.png" alt="Project 2">
+        <div class="content"><p>'Sobha Dream Heights' A high rise residential building - two towers x 33 floors at Gift City</p></div>
+        <div class="title">Sobha Ltd, Gift City, Gandhinagar</div>
+      </div>
+      <div class="project-card" onclick="openModal('modal3')">
+        <img src="Images/sangath.png" alt="Project 3">
+        <div class="content"><p>'Sangath Smart Life' A high rise residential building - two towers x 24 floors at Gift City</p></div>
+        <div class="title">Sangath 81 Infra Pvt.Ltd, Gift City, Gandhinagar</div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:10px;">
+      <a href="projects.html" class="cta-btn">See More Projects</a>
+    </div>
+  </section>
 
-
-<!-- Projects Section -->
-<section id="projects" class="projects">
-  <h2>Our Projects</h2>
-  <div class="projects-grid">
-    <div class="project-card" onclick="openModal('modal1')">
+  <!-- Modals -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
       <img src="Images/rj1.jpg" alt="Project 1">
-      <div class="content">
-        <p>'Rajyash One' A highrise commercial building</p>
-      </div>
-      <div class="title">Rajyash Projects LLP, Gift City, Gandhinagar</div>
+      <p>We successfully carried out the SITC of advanced HVAC systems…</p>
     </div>
-
-    <div class="project-card" onclick="openModal('modal2')">
+  </div>
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
       <img src="Images/sobha1.png" alt="Project 2">
-      <div class="content">
-        <p>'Sobha Dream Heights' A high rise residential building - two towers x 33 floors at Gift City</p>
-      </div>
-      <div class="title">Sobha Ltd, Gift City, Gandhinagar</div>
+      <p>We successfully completed the SITC of HVAC and Electrical systems…</p>
     </div>
-
-    <div class="project-card" onclick="openModal('modal3')">
+  </div>
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
       <img src="Images/sangath.png" alt="Project 3">
-      <div class="content">
-        <p>'Sangath Smart Life' A high rise residential building - two towers x 24 floors at Gift City</p>
+      <p>We executed the ITC of HVAC and Firefighting systems…</p>
+    </div>
+  </div>
+
+  <!-- Awards Section -->
+  <section id="awards" class="awards">
+    <h2>Award & Recognition</h2>
+    <div class="award-container">
+      <div class="award-card">
+        <img src="Images/cert.jpeg" alt="Best MEP Contractor Award 2024" onclick="openModal('awardModal')">
+        <div class="award-details">
+          <h3>Best MEP Contractor Award 2024</h3>
+          <p>Presented by the Indian Construction League</p>
+        </div>
       </div>
-      <div class="title">Sangath 81 Infra Pvt.Ltd, Gift City, Gandhinagar</div>
+    </div>
+  </section>
+  <div id="awardModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('awardModal')">&times;</span>
+      <img src="Images/cert.jpeg" alt="Best MEP Contractor Award 2024">
     </div>
   </div>
-</section>
 
-<div style="margin-top: 10px; text-align: center;">
-  <a href="projects.html" class="cta-btn">See More Projects</a>
-</div>
-
-<!-- Modals -->
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('modal1')">&times;</span>
-    <img src="Images/rj1.jpg" alt="Project 1">
-    <p>We successfully carried out the Supply, Installation, Testing, and Commissioning (SITC) of advanced HVAC systems for the project. The scope included design coordination, equipment installation, ducting, piping, and system integration to ensure optimal indoor air quality and energy efficiency. Our team delivered the project within the committed timeline, maintaining the highest standards of workmanship and safety."</p>
-  </div>
-</div>
-
-<div id="modal2" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('modal2')">&times;</span>
-    <img src="Images/sobha1.png" alt="Project 2">
-    <p>We successfully completed the Supply, Installation, Testing, and Commissioning (SITC) of HVAC and Electrical systems for the project. The scope covered end-to-end HVAC solutions, electrical wiring, panel installations, lighting systems, and energy management to ensure seamless project execution with top-quality standards and safety compliance."</p>
-  </div>
-</div>
-
-<div id="modal3" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('modal3')">&times;</span>
-    <img src="Images/sangath.png" alt="Project 3">
-    <p>We executed the Installation, Testing, and Commissioning (ITC) of HVAC and Firefighting systems for the project. Our scope included the installation of ventilation and air conditioning systems along with comprehensive fire safety solutions, ensuring efficient performance and full regulatory compliance.</p>
-  </div>
-</div>
-
-
-<!-- Contact Section -->
-<section id="contact" class="contact">
-  <h2>Contact Us</h2>
-  <div class="contact-container">
-    <div class="contact-details">
-      <h3>Get In Touch</h3>
-      <p><strong>Phone:</strong> +91-97263 89566</p>
-      <p><strong>Email:</strong> rudra.engicorp@gmail.com</p>
-      <p><strong>Address:</strong> FF, B-116, Sakar-7 near Nehru Bridge, Ashram Road, Ellis Bridge, Ahmedabad, Gujarat, India</p>
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-container">
+      <div class="contact-details">
+        <h3>Get In Touch</h3>
+        <p><strong>Phone:</strong> +91-97263 89566</p>
+        <p><strong>Email:</strong> rudra.engicorp@gmail.com</p>
+        <p><strong>Address:</strong> FF, B-116, Sakar-7… Ahmedabad, Gujarat, India</p>
+      </div>
+      <div class="contact-map">
+        <iframe
+          src="https://maps.google.com/maps?q=23.027431,72.569854&z=18&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
     </div>
-    <div class="contact-map">
-      <iframe 
-        src="https://maps.google.com/maps?q=23.027431,72.569854&z=18&output=embed"
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- Footer -->
-<footer>
-  &copy; 2025 Rudra Engicorp. All rights reserved.
-</footer>
+  <!-- Footer -->
+  <footer>&copy; 2025 Rudra Engicorp. All rights reserved.</footer>
 
-<!-- Modal JavaScript -->
-<script>
-function openModal(id) {
-  document.getElementById(id).style.display = "block";
-}
-
-function closeModal(id) {
-  document.getElementById(id).style.display = "none";
-}
-
-// Close when clicking outside
-window.onclick = function(event) {
-  const modals = document.querySelectorAll('.modal');
-  modals.forEach(modal => {
-    if (event.target == modal) {
-      modal.style.display = "none";
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
     }
-  });
-}
-
-// Auto open new modal after 5 seconds
-setTimeout(function() {
-  document.getElementById('autoModal').style.display = 'block';
-}, 5000);
-</script>
-
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+    window.onclick = function(e) {
+      document.querySelectorAll('.modal').forEach(m => {
+        if (e.target === m) m.style.display = 'none';
+      });
+    };
+  </script>
 </body>
 </html>
