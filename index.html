@@ -289,6 +289,97 @@
   width: 400px !important;  /* up from 150px */
   height: auto !important;
 }
+/* Awards Section */
+.awards {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+.awards h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+.award-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.award-card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  max-width: 350px;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.award-card:hover {
+  transform: translateY(-5px);
+}
+.award-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.award-details h3 {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+}
+.award-details p {
+  color: #555;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+}
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+  position: relative;
+}
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: #aaa;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover {
+  color: black;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .awards h2 {
+    font-size: 1.8rem;
+  }
+  .award-details h3 {
+    font-size: 1rem;
+  }
+}
 
   </style>
 </head>
@@ -401,25 +492,28 @@
     </div>
   </div>
 
-  <!-- Awards Section -->
-  <section id="awards" class="awards">
-    <h2>Award & Recognition</h2>
-    <div class="award-container">
-      <div class="award-card">
-        <img src="Images/cert.jpeg" alt="Award for HVAC/Fire work completion" onclick="openModal('awardModal')">
-        <div class="award-details">
-          <h3>Award for HVAC/Fire work completion</h3>
-          <p>Presented by the SJ SANGATH</p>
-        </div>
+<!-- Awards Section -->
+<section id="awards" class="awards">
+  <h2>Awards & Recognition</h2>
+  <div class="award-container">
+    <div class="award-card">
+      <img src="Images/cert.jpeg" alt="Award for HVAC/Fire work completion" onclick="openModal('awardModal')" />
+      <div class="award-details">
+        <h3>HVAC/Fire Work Completion</h3>
+        <p>Presented by SJ SANGATH</p>
       </div>
     </div>
-  </section>
-  <div id="awardModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('awardModal')">&times;</span>
-      <img src="Images/cert.jpeg" alt="Best MEP Contractor Award 2024">
-    </div>
   </div>
+</section>
+
+<!-- Award Modal -->
+<div id="awardModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('awardModal')">&times;</span>
+    <img src="Images/cert.jpeg" alt="Award Certificate" />
+  </div>
+</div>
+
 
   <!-- Contact Section -->
   <section id="contact" class="contact">
